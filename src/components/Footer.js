@@ -1,3 +1,4 @@
+import React from "react";
 const logo = (
   <div className="col-span-full lg:col-span-2">
     <div className="mb-4 lg:-mt-2">
@@ -96,7 +97,7 @@ const logo = (
     </div>
   </div>
 );
-import React from "react";
+
 const Footer = () => {
   const navProducts = [
     { href: "https://www.godaddy.com/", title: "Overview" },
@@ -111,6 +112,19 @@ const Footer = () => {
     { href: "#", title: "Jobs" },
     { href: "#", title: "Press" },
     { href: "#", title: "Blog" },
+  ];
+  const navSupport = [
+    { href: "https://www.godaddy.com/", title: "" },
+    { href: "#", title: "Contact" },
+    { href: "#", title: "Documentation" },
+    { href: "#", title: "Chat" },
+    { href: "#", title: "FAQ" },
+  ];
+  const navLegal = [
+    { href: "https://www.godaddy.com/", title: "" },
+    { href: "#", title: "Terms of Service" },
+    { href: "#", title: "Privacy Policy" },
+    { href: "#", title: "Cookie settings" },
   ];
   return (
     <div className="bg-gray-900">
@@ -160,41 +174,16 @@ const Footer = () => {
             </div>
 
             <nav className="flex flex-col gap-4">
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Contact
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Documentation
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Chat
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  FAQ
-                </a>
-              </div>
+              {navSupport.map((item) => (
+                <div>
+                  <a
+                    href={item.href}
+                    className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                  >
+                    {item.title}
+                  </a>
+                </div>
+              ))}
             </nav>
           </div>
           <div>
@@ -203,32 +192,16 @@ const Footer = () => {
             </div>
 
             <nav className="flex flex-col gap-4">
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Terms of Service
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Privacy Policy
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Cookie settings
-                </a>
-              </div>
+              {navLegal.map((item) => (
+                <div>
+                  <a
+                    href={item.href}
+                    className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                  >
+                    {item.title}
+                  </a>
+                </div>
+              ))}
             </nav>
           </div>
         </div>
